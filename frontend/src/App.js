@@ -47,7 +47,9 @@ function App() {
 
   // this functions tells us to clear the db
   const deleteData = () => {
-    fetch("http://localhost:8080/api/booking", { method: "DELETE" })
+    fetch("https://almabetter-full-stack.herokuapp.com/api/booking", {
+      method: "DELETE",
+    })
       // .then((res) => console.log(res))
       .then(() => getData())
       .catch((err) => console.log(err));
@@ -55,7 +57,7 @@ function App() {
 
   // this function fetches the last booking and update the state for displaying of it
   const getData = async () => {
-    return fetch("http://localhost:8080/api/booking")
+    return fetch("https://almabetter-full-stack.herokuapp.com/api/booking")
       .then((data) => data.json())
       .then((data) => setfetchedData(data))
       .catch((err) => console.log(err));
@@ -63,7 +65,7 @@ function App() {
 
   // this function sends the collected state to the db and updates it further gives a response of the last booking
   const handelPost = async (data) => {
-    return fetch("http://localhost:8080/api/booking", {
+    return fetch("https://almabetter-full-stack.herokuapp.com/api/booking", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
