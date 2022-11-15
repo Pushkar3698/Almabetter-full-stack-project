@@ -10,7 +10,7 @@ into the database establishes a connection with it and gives us the response acc
 
 just type npm install in the respective folders to install the node packages necessary for the app to run and youre good to go!
 
-This project contains both frontend and the backend in real the backend is hosted on heroku cloud and the front is hosted on the aws cloud amazon.
+This project contains both frontend and the backend in real the backend is hosted on heroku cloud and the frontEnd is hosted on the aws cloud amazon.
 the frontedn with the api end points communicates with the server which then goes into the database and looks out the data and is further sended as 
 a response to the front end which is then updated in the ui part. This complex project has taught many aspects of the handling of the complete frontend and backend 
 and has given a brief introduction to how the complete web works.
