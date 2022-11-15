@@ -13,7 +13,8 @@ just type npm install in the respective folders to install the node packages nec
 This project contains both frontend and the backend in real the backend is hosted on heroku cloud and the frontEnd is hosted on the aws cloud amazon.
 the frontedn with the api end points communicates with the server which then goes into the database and looks out the data and is further sended as 
 a response to the front end which is then updated in the ui part. This complex project has taught many aspects of the handling of the complete frontend and backend 
-and has given a brief introduction to how the complete web works.Also how the erros work and we get and also to handle them.
+and has given a brief introduction to how the complete web works.Also how the erros work and we get and also to handle them. The complete mvc pattern has been used
+to achieve the working of the project.
 
 Bonus :- a delete button is added to clear the database which is a delete request on the same api url which 
 will delete all the the data and clear out the database further emptying it.
