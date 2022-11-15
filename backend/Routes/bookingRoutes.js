@@ -5,6 +5,7 @@ const bookingsModel = require("../model/bookings");
 
 // router for get request
 bookingRouter.get("/booking", (req, res, next) => {
+  // getting all the booking data from the db and if it is empty we are sending an empty array as response and not then the last booking is sended
   bookingsModel
     .find()
     .then((result) => {
@@ -19,6 +20,7 @@ bookingRouter.get("/booking", (req, res, next) => {
 
 // router for post request
 bookingRouter.post("/booking", (req, res, next) => {
+  // storing the user data entered in the frontend in the data constant
   const data = req.body;
 
   const movie = data.movie;
@@ -27,6 +29,8 @@ bookingRouter.post("/booking", (req, res, next) => {
 
   // creating a new model withh the data fetched from the frontend
   const movieBooking = new bookingsModel({ movie, slot, seats });
+
+  // saving the user data in the database and then finding out the last result and sending it back to the frontend as a response
   movieBooking
     .save()
     .then(() =>
@@ -37,12 +41,11 @@ bookingRouter.post("/booking", (req, res, next) => {
         )
     )
     .catch((err) => console.log(err));
-
-  // res.status(200).send({ type: "post" });
 });
 
-// extra bonus router added for delering and empting the database
+// extra bonus router added for deleting and empting the database
 bookingRouter.delete("/booking", (req, res, next) => {
+  // deleting all the last bookings and sending a 204 code and a message object as response
   bookingsModel
     .deleteMany({})
     .then(() => res.status(204).send({ deleted: "Deleted" }))
